@@ -3,7 +3,7 @@
     { href: 'index.html',        label: 'Home' },
     { href: 'aggiornamenti.html', label: 'Aggiornamenti' },
     { href: 'documento.html',    label: 'Il documento' },
-    { href: 'richieste.html',    label: 'Le richieste' },
+    { href: 'richieste.html',    label: 'Trasparenza' },
     { href: 'faq.html',          label: 'FAQ' }
   ];
 
