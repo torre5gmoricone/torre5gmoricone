@@ -722,3 +722,15 @@ footer p {
 
   main { padding: 36px 0 60px; }
 }
+
+/* ── Intro sintesi documento ── */
+.intro-summary {
+  background: var(--blue-light);
+  border-left: 4px solid var(--blue);
+  border-radius: 0;
+  padding: 1.25rem 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: var(--ink);
+}
