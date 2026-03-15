@@ -1,10 +1,11 @@
 (function() {
   var links = [
-    { href: 'index.html',        label: 'Home' },
+    { href: 'index.html',         label: 'Home' },
+    { href: 'documento.html',     label: 'Il documento' },
     { href: 'aggiornamenti.html', label: 'Aggiornamenti' },
-    { href: 'documento.html',    label: 'Il documento' },
-    { href: 'richieste.html',    label: 'Trasparenza' },
-    { href: 'faq.html',          label: 'FAQ' }
+    { href: 'procedimento.html',  label: 'Procedimento' },
+    { href: 'richieste.html',     label: 'Le richieste' },
+    { href: 'faq.html',           label: 'FAQ' }
   ];
 
   var current = location.pathname.split('/').pop() || 'index.html';
@@ -26,3 +27,22 @@
     nav.classList.toggle('open');
   });
 })();
+
+// Accordion pillole
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.pillola-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var l2 = btn.closest('.pillola-l1').nextElementSibling;
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      if (expanded) {
+        l2.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'Approfondisci ↓';
+      } else {
+        l2.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = 'Chiudi ↑';
+      }
+    });
+  });
+});

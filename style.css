@@ -768,3 +768,120 @@ footer p {
   margin-bottom: 2rem;
   color: var(--ink);
 }
+
+/* === PILLOLE ACCORDION === */
+
+.sezione-titolo {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--ink-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+}
+
+.pillola {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+
+.pillola-titolo {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+}
+
+.pillola-testo {
+  color: var(--ink-mid);
+  margin: 0 0 0.75rem;
+}
+
+.pillola-toggle {
+  border: none;
+  background: transparent;
+  color: var(--blue);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 0.25rem;
+}
+
+.pillola-toggle:hover {
+  text-decoration: underline;
+}
+
+.pillola-l2 {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--ink-mid);
+}
+
+.pillola-l3 {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: var(--blue-light);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.l3-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink-light);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.intro-text {
+  font-size: 1.05rem;
+  color: var(--ink-mid);
+  max-width: 680px;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.download-link a,
+.download-footer a {
+  color: var(--blue);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.download-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--border);
+  text-align: center;
+}
+
+.infografica-placeholder {
+  background: var(--paper-mid);
+  border: 1px dashed var(--border);
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  margin: 1rem 0;
+  color: var(--ink-light);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.infografica-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
+}
