@@ -1,11 +1,8 @@
 (function() {
   var links = [
-    { href: 'index.html',         label: 'Home' },
-    { href: 'documento.html',     label: 'Il documento' },
-    { href: 'aggiornamenti.html', label: 'Aggiornamenti' },
-    { href: 'procedimento.html',  label: 'Procedimento' },
-    { href: 'richieste.html',     label: 'Le richieste' },
-    { href: 'faq.html',           label: 'FAQ' }
+    { href: 'index.html',        label: 'Home' },
+    { href: 'comeprocede.html',  label: 'Come procede' },
+    { href: 'faq.html',          label: 'FAQ' }
   ];
 
   var current = location.pathname.split('/').pop() || 'index.html';
