@@ -27,19 +27,38 @@
 
 // Accordion pillole
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.pillola-toggle').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var l2 = btn.closest('.pillola-l1').nextElementSibling;
-      var expanded = btn.getAttribute('aria-expanded') === 'true';
-      if (expanded) {
-        l2.hidden = true;
-        btn.setAttribute('aria-expanded', 'false');
-        btn.textContent = 'Approfondisci ↓';
-      } else {
-        l2.hidden = false;
-        btn.setAttribute('aria-expanded', 'true');
-        btn.textContent = 'Chiudi ↑';
-      }
+  var pillole = document.querySelectorAll('.pillola');
+
+  function closeAll() {
+    pillole.forEach(function(p) {
+      var l2 = p.querySelector('.pillola-l2');
+      var indicator = p.querySelector('.pillola-indicator');
+      if (l2) l2.hidden = true;
+      if (indicator) indicator.textContent = '+';
     });
+  }
+
+  pillole.forEach(function(pillola) {
+    var titolo = pillola.querySelector('.pillola-titolo');
+    var l2 = pillola.querySelector('.pillola-l2');
+    var indicator = pillola.querySelector('.pillola-indicator');
+
+    if (titolo && l2) {
+      titolo.addEventListener('click', function() {
+        var isOpen = !l2.hidden;
+        closeAll();
+        if (!isOpen) {
+          l2.hidden = false;
+          if (indicator) indicator.textContent = '−';
+        }
+      });
+    }
+
+    if (l2) {
+      l2.addEventListener('click', function() {
+        l2.hidden = true;
+        if (indicator) indicator.textContent = '+';
+      });
+    }
   });
 });
