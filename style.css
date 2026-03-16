@@ -948,17 +948,20 @@ footer p {
   .mobile-quicknav {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    background: var(--blue);
-    padding: 0.55rem 1rem;
-    width: 100%;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
   }
   .mobile-quicknav a {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.78rem;
-    color: #fff;
+    color: var(--blue);
     text-decoration: none;
-    letter-spacing: 0.03em;
+    border: 1.5px solid var(--blue);
+    padding: 0.35rem 0.85rem;
+    border-radius: 3px;
+    background: #fff;
   }
 }
 
@@ -1001,12 +1004,13 @@ footer p {
   border-radius: 3px;
   transition: background 0.15s, color 0.15s;
 }
-.pill-toggle[aria-expanded="true"],
-.pill-toggle--close {
+.pill-toggle[aria-expanded="true"] {
   background: var(--blue);
   color: #fff;
 }
 .pill-toggle--close {
+  background: var(--blue);
+  color: #fff;
   position: sticky;
   bottom: 1rem;
   margin-top: 1.25rem;

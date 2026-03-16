@@ -41,11 +41,19 @@ document.querySelectorAll('.pill-toggle').forEach(function(btn) {
       t.setAttribute('aria-expanded', 'false');
     });
 
+    // Resetta testo di tutti i bottoni principali
+    document.querySelectorAll('.pill-toggle:not(.pill-toggle--close)').forEach(function(t) {
+      t.textContent = 'Approfondimento ↓';
+    });
+
     // Se era chiuso, aprilo
     if (!isOpen) {
       body.hidden = false;
       var openBtn = pill.querySelector('.pill-toggle:not(.pill-toggle--close)');
-      if (openBtn) openBtn.setAttribute('aria-expanded', 'true');
+      if (openBtn) {
+        openBtn.setAttribute('aria-expanded', 'true');
+        openBtn.textContent = 'Approfondimento ↑';
+      }
       setTimeout(function() {
         body.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }, 50);
@@ -60,6 +68,9 @@ document.querySelectorAll('.pill-body').forEach(function(body) {
     this.hidden = true;
     var pill = this.closest('.pill');
     var openBtn = pill.querySelector('.pill-toggle:not(.pill-toggle--close)');
-    if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+    if (openBtn) {
+      openBtn.setAttribute('aria-expanded', 'false');
+      openBtn.textContent = 'Approfondimento ↓';
+    }
   });
 });
