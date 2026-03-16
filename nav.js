@@ -26,39 +26,40 @@
 })();
 
 // Accordion pillole
-document.addEventListener('DOMContentLoaded', function() {
-  var pillole = document.querySelectorAll('.pillola');
+document.querySelectorAll('.pill-toggle').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    var pill = this.closest('.pill');
+    var body = pill.querySelector('.pill-body');
+    var isOpen = !body.hidden;
 
-  function closeAll() {
-    pillole.forEach(function(p) {
-      var l2 = p.querySelector('.pillola-l2');
-      var indicator = p.querySelector('.pillola-indicator');
-      if (l2) l2.hidden = true;
-      if (indicator) indicator.textContent = '+';
+    // Chiudi tutti
+    document.querySelectorAll('.pill-body').forEach(function(b) {
+      b.hidden = true;
     });
-  }
+    document.querySelectorAll('.pill-toggle:not(.pill-toggle--close)').forEach(function(t) {
+      t.setAttribute('aria-expanded', 'false');
+    });
 
-  pillole.forEach(function(pillola) {
-    var titolo = pillola.querySelector('.pillola-titolo');
-    var l2 = pillola.querySelector('.pillola-l2');
-    var indicator = pillola.querySelector('.pillola-indicator');
-
-    if (titolo && l2) {
-      titolo.addEventListener('click', function() {
-        var isOpen = !l2.hidden;
-        closeAll();
-        if (!isOpen) {
-          l2.hidden = false;
-          if (indicator) indicator.textContent = '−';
-        }
-      });
+    // Se era chiuso, aprilo
+    if (!isOpen) {
+      body.hidden = false;
+      var openBtn = pill.querySelector('.pill-toggle:not(.pill-toggle--close)');
+      if (openBtn) openBtn.setAttribute('aria-expanded', 'true');
+      setTimeout(function() {
+        body.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 50);
     }
+  });
+});
 
-    if (l2) {
-      l2.addEventListener('click', function() {
-        l2.hidden = true;
-        if (indicator) indicator.textContent = '+';
-      });
-    }
+// Click sul body espanso → chiude
+document.querySelectorAll('.pill-body').forEach(function(body) {
+  body.addEventListener('click', function(e) {
+    if (e.target.closest('.pill-toggle--close')) return;
+    this.hidden = true;
+    var pill = this.closest('.pill');
+    var openBtn = pill.querySelector('.pill-toggle:not(.pill-toggle--close)');
+    if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
   });
 });
