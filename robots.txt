@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://torre5gmoricone.github.io/sitemap.xml
