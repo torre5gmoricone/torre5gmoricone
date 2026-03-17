@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /Torre5G_Analisi_Tecnica_Territoriale_marzo2026.pdf
 Sitemap: https://torre5gmoricone.github.io/sitemap.xml
