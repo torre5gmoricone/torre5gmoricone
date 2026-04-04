@@ -2,8 +2,8 @@
   var links = [
     { href: 'index.html',        label: 'Home' },
     { href: 'comeprocede.html',  label: 'Come procede' },
-    { href: 'contratto.html',    label: 'Il contratto' },
     { href: 'delibera.html',     label: 'La delibera' },
+    { href: 'contratto.html',    label: 'Il contratto' },
     { href: 'faq.html',          label: 'FAQ' }
   ];
 
